@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CustomerDashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+</head>
+<bp:content>
+    <h1 style="background: #c6ab02be ; border: 2px solid hwb(0 0% 100%); color:rgb(19, 18, 18) ;font-family: Georgia, serif; text-align: center;">Customer Dashboard</h1>
+    <p style="background: #c6ab02be ; border: 2px solid hwb(0 0% 100%); color:rgb(19, 18, 18) ;font-family: Georgia, serif; text-align: center;">Welcome to the Customer dashboard.</p>
+    <p style="color:rgb(19, 18, 18) ;font-family: Georgia, serif; text-align: center;">Welcome {{name}}</p>
+    <p><a href="{{url_for('home')}}">Home</a></p>
+    <p><a href="{{url_for('your_booking')}}">your bookings</a></p>
+    <p><a href="{{url_for('Payment_option')}}">Payment</a></p>
+    <p><a href="{{url_for('Review')}}">Review</a></p>
+    <p><a href="{{url_for('customerlogout')}}">Logout</a></p>
+
+    <div class="container">
+        <h2>
+            Pick up location
+        </h2>
+        <form action="{{url_for('avaialable_cabs')}}", method="post">
+            <div class="form-group">
+                <label for="pick_up_loc">Pick up Location:</label>
+                <input type="text" class="form-control" id="pick_up_loc" placeholder="Enter the Location" name="pick_up_loc">
+            </div>
+            <div class="form-group">
+                <label for="dest_loc">Destination location:</label>
+                <input type="text" class="form-control" id="dest_loc" placeholder="Enter the Destination" name="dest_loc">
+            </div>
+            <button style="background-color: cornflowerblue;font-family: Georgia, serif;"  type="submit" class="btn btn-default">submit</button>
+        </form>
+    </div>
+
+</bp:content>
+
+</html>

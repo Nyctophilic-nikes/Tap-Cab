@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Payment Option</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+    </head>
+    <body>
+        <h1 style="background: #c6ab02be ; border: 2px solid hwb(0 0% 100%); color:rgb(19, 18, 18) ;font-family: Georgia, serif; text-align: center;">Make Payment</h1>
+        <p>Phone Pe</p>
+        <p>Paytem</p>
+        <p>Gpay</p>
+
+        <form action="{{url_for('Payment_done')}}" method="post">
+            {% if error %}
+            <div class="alert alert-danger">
+                {{error}}
+            </div>
+            {% endif %}
+            <div class="form-group" style="color:rgb(0, 0, 0) ;font-family: Georgia, serif;">
+                <label for="booking_id">Booking ID</label>
+                <input type="text" class="form-control" id="booking_id" placeholder="Enter the Booking ID" name="booking_id">
+            </div>
+            <div class="form-group" style="color:rgb(2, 0, 0) ;font-family: Georgia, serif;">
+                <label for="amount">Amount</label>
+                <input type="amount" class="form-control" id="amount" placeholder="Enter Amount" name="amount">
+            </div>
+            <button type="submit" style="background-color: cornflowerblue ;font-family: Georgia, serif;"
+                class="btn btn-default">submit</button><br><br>
+        </form>
+        <a href="{{url_for('driver_dashboard')}}">Dashboard</a>
+    </body>
+</html>

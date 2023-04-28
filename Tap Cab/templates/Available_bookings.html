@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Bookings</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+    
+        th {
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+</head>
+<table>
+    <thead>
+        <tr>
+            <th>Booking ID</th>
+            <th>Pick up Location</th>
+            <th>Destination Location</th>
+            <th>Fare</th>
+            <th>Status</th>
+            <th>Booking time</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            <td>{{row[0]}}</td>
+            <td>{{row[3]}}</td>
+            <td>{{row[4]}}</td>
+            <td>{{row[5]}}</td>
+            <td>{{row[6]}}</td>
+            <td>{{row[7]}}</td>
+        </tr>
+        {%endfor%}
+    </tbody>
+    <bp:content>
+        <div class="container">
+            <h2  style="background: #c6ab02be ; border: 2px solid hwb(0 0% 100%); color:rgb(19, 18, 18) ;font-family: Georgia, serif; text-align: center;">
+                Start Ride
+            </h2>
+            <form action="{{url_for('confirm_booking')}}" , method="post">
+                <div style="color:rgb(19, 18, 18) ;font-family: Georgia, serif;" class="form-group">
+                    <label for="booking_id">Booking ID:</label>
+                    <input type="text" class="form-control" id="booking_id" placeholder="Enter the Booking ID" name="booking_id">
+                </div>
+                <button style="background-color: cornflowerblue;font-family: Georgia, serif;"  type="submit" class="btn btn-default">submit</button><br><br>
+            </form>
+        </div>
+        <a href="{{url_for('driver_dashboard')}}">Dashboard</a>
+    </bp:content>
+</table>
+</html>

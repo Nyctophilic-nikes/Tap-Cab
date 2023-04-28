@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Payment</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+        
+            th,
+            td {
+                text-align: left;
+                padding: 8px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+        
+            tr:nth-child(even) {
+                background-color: #f2f2f2
+            }
+        
+            th {
+                background-color: #04AA6D;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2 style="background: #c6ab02be ; border: 2px solid hwb(0 0% 100%); color:rgb(13, 13, 13) ;font-family: Georgia, serif;">Add Payment</h2>
+            <form action="{{url_for('Payment_Added')}}" method="post">
+                {% if error %}
+                <div class="alert alert-danger">
+                    {{error}}
+                </div>
+                {% endif %}
+                <div class="form-group" style="color:rgb(0, 0, 0) ;font-family: Georgia, serif;">
+                    <label for="booking_id">Booking ID</label>
+                    <input type="text" class="form-control" id="booking_id" placeholder="Enter the Booking ID" name="booking_id">
+                </div>
+                <div class="form-group" style="color:rgb(2, 0, 0) ;font-family: Georgia, serif;">
+                    <label for="amount">Amount</label>
+                    <input type="amount" class="form-control" id="amount" placeholder="Enter Amount" name="amount">
+                </div>
+                <button type="submit" style="background-color: cornflowerblue ;font-family: Georgia, serif;"
+                    class="btn btn-default">submit</button><br><br>
+            </form>
+            <a href="{{url_for('driver_dashboard')}}">Dashboard</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Pick up Location</th>
+                        <th>Destination Location</th>
+                        <th>Fare</th>
+                        <th>Status</th>
+                        <th>Booking time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data %}
+                    <tr>
+                        <td>{{row[0]}}</td>
+                        <td>{{row[3]}}</td>
+                        <td>{{row[4]}}</td>
+                        <td>{{row[5]}}</td>
+                        <td>{{row[6]}}</td>
+                        <td>{{row[7]}}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+        </div>
+    </body>
+</html>

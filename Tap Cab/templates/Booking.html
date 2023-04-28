@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking</title>
+            <h1
+                style="background: #c6ab02be ; border: 2px solid hwb(0 0% 100%); color:rgb(12, 11, 11) ;font-family: Georgia, serif; text-align: center;">
+                Cab Booked</h1>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    
+        th,
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+    </head>
+    <table style="width:100%">
+        <tr>
+            <th>Customer Id</th>
+            <td>{{cust_id}}</td>
+        </tr>
+        <tr>
+            <th>Pick up location</th>
+            <td>{{pick_up_loc}}</td>
+        </tr>
+        <tr>
+            <th>Destination location</th>
+            <td>{{dest_loc}}</td>
+        </tr>
+        <tr>
+            <th>Fare</th>
+            <td>{{fare}}</td>
+        </tr>
+        <tr>
+            <th>Cab Id</th>
+            <td>{{cab_id}}</td>
+        </tr>
+        <tr>
+            <th>Cab type</th>
+            <td>{{cab_type}}</td>
+        </tr>
+        <tr>
+            <th>Cab Registration Number</th>
+            <td>{{cab_number}}</td>
+        </tr>
+        <tr>
+            <th>Driver Name</th>
+            <td>{{driver_name}}</td>
+        </tr>
+        <tr>
+            <th>Driver Phone Number</th>
+            <td>{{driver_phone}}</td>
+        </tr>
+    </table>
+    <bp:content>
+        <a href="{{url_for('customer_dashboard')}}">Dashboard</a>
+    </bp:content>
+</head>
+</html>
