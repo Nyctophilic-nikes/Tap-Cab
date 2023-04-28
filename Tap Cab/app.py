@@ -8,7 +8,7 @@ import time
 connection = mysql.connector.connect(host='localhost',
                                      database='demo5',
                                      user='root',
-                                     password='Nikes@sql98')
+                                     password='*********')
 cursor = connection.cursor()
 
 app = Flask(__name__)
